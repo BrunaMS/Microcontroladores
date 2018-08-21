@@ -1,0 +1,17 @@
+1. O que são sistemas embarcados?
+Sistemas independentes projetados para executar uma tarefa ou função específica pré-determinada.
+
+2. O que são sistemas microprocessados?
+Sistemas gerados e acionados para funcionar através do uso das ferramentas e dos componentes de um microcontrolador.
+
+3. Apresente aplicações de sistemas embarcados: (a) para a indústria automotiva; (b) para eletrodomésticos; (c) para automação industrial.
+a) Sistemas de controle de motores automotivos.
+b) Sistemas de supervisão.
+c) Controles remotos, máquinas de escritório, residenciais e industriais.
+
+4. Cite arquiteturas possíveis e as diferenças entre elas.
+Harvard Architecture - CPU apenas envia endereços de memória para a RAM e a ROM, recebe dados de ambos e envia apenas para a RAM, separando assim a memória de armazenamento de programas (ROM) da memória de armazenamento de dados (RAM).
+von Neumann Architecture - CPU envia endereços de memória para RAM e ROM e é caracterizado pela junção da memória de programa com a memória de dados em uma "Single space memory" (espaço de memória único).
+
+5. Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+Pois é um microcontrolador de tamanho médio que possui todas as ferramentas necessárias para a realização dos projetos e aprendizagem da disciplina.
