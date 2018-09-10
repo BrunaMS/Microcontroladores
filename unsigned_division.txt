@@ -1,0 +1,36 @@
+// Divisão de C para assembly
+
+unsigned int Divisão_uns(unsigned int a, unsigned int b)
+{
+unsigned int c = 0;
+
+	if(b > 0)
+	{
+		while(b <= a)
+		{
+			a- = b;
+			c++;
+
+		}
+
+
+	}
+
+return c;
+}
+
+; =============================================================== XX =============================================================== ;
+
+Divisao_uns: 		push R4; 		R4:C
+			clr R4; 		C = 0
+			tst R14
+			jz Divisao_uns_else
+
+Divisao_uns_while:	cmp R14, R15
+			j/ Divisao_uns_else
+			sub R14, R15
+			inc R4
+
+Divisao_uns_else:	mov R4, R15
+			pop R4
+			ret

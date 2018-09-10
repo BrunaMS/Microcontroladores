@@ -1,0 +1,56 @@
+// Divisão de C (com sinal) para Assembly
+
+int Divisao(int a, int b)
+{
+	int c, signal = 0;
+
+	if(a < 0)
+	{
+		a = -a;
+		signal++;
+
+	}
+
+	if(b < 0)
+	{
+		b = -b;
+		signal++;
+	}
+
+	c = Divisao_uns(a, b);
+	if(signal == 1)
+		c = -c;
+	return c;
+}
+
+
+Divisao_a:	cmp #0, R15
+		jge Divisao_b
+		inv R15
+		inc R15; a = -a
+		inc R4; signal++
+
+
+Divisao_b:	cmp #0, R14 ; = test R14
+		jge Divisao_c
+		inv R14
+		inc R14
+		inc R4
+
+
+Divisao_c:	call Divisao_uns
+		mov R15, R5
+		cmp #1, R4
+		jne Divisao_end ; jump-if-not-equal
+		inv R5 ; Inverte e incrementa ==> Complemento de 2
+		inc R5
+
+
+Divisao_end:    mov R5, R15
+		pop R5
+		pop R4
+		ret
+
+
+
+
